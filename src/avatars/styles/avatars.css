@@ -28,26 +28,24 @@
     bottom: 0;
     left: 0;
   }
-  .status-on {
+
+  /* js를 사용하면 하나만 두고 색깔만 변경하는 식으로 바꿀 수 있을 듯 */
+  .status {
     box-sizing: border-box;
     width: 17.78px;
     height: 17.78px;
-    background-color: #4cfe88;
     border-radius: 100%;
     border: 1px solid #ffffff;
     position: absolute;
     right: 0;
     bottom: 0;
   }
-  .status-off {
-    box-sizing: border-box;
-    width: 17.78px;
-    height: 17.78px;
+
+  .on {
+    background-color: #4cfe88;
+  }
+
+  .off {
     background-color: #dbdbdb;
-    border-radius: 100%;
-    border: 1px solid #ffffff;
-    position: absolute;
-    right: 0;
-    bottom: 0;
   }
 }
