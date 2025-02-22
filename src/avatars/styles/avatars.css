@@ -1,0 +1,53 @@
+/* 여기에 스타일을 구현해 주세요 */
+
+/* 전체 컨텐츠가 들어가는 컨테이너 */
+.outer-box {
+  background-color: #ffffff;
+  padding: 100px;
+  width: 396px;
+  height: 195px;
+}
+
+/* image와 status icon이 들어가는 avatar-set */
+.avatar-box {
+  display: inline-block;
+  box-sizing: border-box;
+  position: relative;
+  width: 64px;
+  height: 64px;
+  margin: 10px;
+
+  .avatar-pic {
+    box-sizing: border-box;
+    border-radius: 100%;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  .status-on {
+    box-sizing: border-box;
+    width: 17.78px;
+    height: 17.78px;
+    background-color: #4cfe88;
+    border-radius: 100%;
+    border: 1px solid #ffffff;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  .status-off {
+    box-sizing: border-box;
+    width: 17.78px;
+    height: 17.78px;
+    background-color: #dbdbdb;
+    border-radius: 100%;
+    border: 1px solid #ffffff;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+}
