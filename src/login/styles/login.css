@@ -1,0 +1,120 @@
+@import "../../common/modern-reset.css";
+@import "../../common/theme.css";
+@import "../../common/a11y.css";
+
+:root {
+  --font-size-base: 16px;
+  --color-text-base: #121212;
+}
+
+body {
+  font-family: "SpoqaHanSansNeo-Regular";
+  justify-items: center;
+  display: flex;
+  flex-flow: row nowrap;
+
+  /* inline-size: 100vw;
+  block-size: 100vh; */
+  font-size: var(--font-size-base);
+  color: var(--color-text-base);
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  *:focus {
+    outline: 0.0625rem solid #24388d;
+  }
+}
+
+/* 폼 */
+.login-form {
+  display: flex;
+  flex-flow: column;
+  margin: 1.25rem;
+  flex: 0 1 31.25rem;
+
+  /* 로고 컴포넌트 */
+  .brand {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+
+    .logo {
+      display: block;
+      inline-size: 14.375rem;
+
+      margin-block-start: 4.375rem;
+    }
+  }
+
+  /* 입력 컴포넌트 */
+  .login-input {
+    font-size: 0.875rem;
+    inline-size: 100%;
+    block-size: 2.8125rem;
+
+    display: block;
+    margin-block-start: 1.25rem;
+    padding-inline: 1rem;
+
+    border: 0.0625rem solid #dadada;
+    background: #fff;
+
+    &:focus {
+      border: 0.0625rem solid #03cf5d;
+      background: #e9f0fd;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    max-inline-size: 31.25rem;
+    margin-inline: 1.25rem;
+  }
+}
+
+/* 로그인 버튼 컴포넌트 */
+.login-button {
+  font-size: 1rem;
+  block-size: 2.8125rem;
+  color: #fff;
+  background: #03cf5d;
+  margin-block-start: 1.25rem;
+  border: none;
+}
+
+.login-options {
+  margin-block-start: 0.625rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: end;
+  /* justify-content: space-between; */
+
+  /* 체크박스 컴포넌트 */
+  .remember-me {
+    .check-box {
+      appearance: none; /* 기본 체크박스 스타일 제거 */
+      width: 24px;
+      height: 24px;
+      background: url("../images/unchecked.svg") no-repeat center / contain;
+      cursor: pointer;
+      vertical-align: middle;
+      margin-inline-end: 0.3125rem;
+    }
+
+    /* 체크됐을 때 이미지 변경 */
+    .check-box:checked {
+      background-image: url("../images/checked.svg");
+    }
+
+    label[for="rememberMe"] {
+      /* 박스와 높이 안 맞아서 보정 */
+      display: inline-flex;
+      vertical-align: middle;
+    }
+  }
+  .security-onoff {
+    display: none;
+  }
+}

@@ -65,6 +65,12 @@
       .homework-links a:hover {
         color: #007bff;
       }
+
+      .summary {
+        color: #000000;
+        font-weight: 700;
+        transition: color 0.3s ease;
+      }
     </style>
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap"
@@ -86,22 +92,34 @@
       <p class="bio">
         멋쟁이 사자처럼 프론트엔드 부트캠프 13기 <br />임지윤 과제 페이지입니다.
       </p>
-      <p>과제 결과는 링크에서 확인해주세요.▼</p>
-      <ul class="homework-links">
-        <li>
-          <a href="./src/md/markdown.md"><strong>마크다운 문법</strong></a>
-        </li>
-        <li>
-          <a href="./src/md/retrospect.md"><strong>1~2주차 회고</strong></a>
-        </li>
-      </ul>
+      <details>
+        <summary class="summary">지난 과제 모음</summary>
+        <ul class="homework-links">
+          <li>
+            <a href="./src/md/markdown.md"><strong>마크다운 문법</strong></a>
+          </li>
+          <li>
+            <a href="./src/md/retrospect.md"><strong>1~2주차 회고</strong></a>
+          </li>
+        </ul>
+        <hr />
+        <ul class="homework-links">
+          <li>
+            <a href="./src/avatars/avatars.html"><strong>아바타</strong></a>
+          </li>
+          <li>
+            <a href="./src/avatars/avatars.md"><strong>3주차 회고</strong></a>
+          </li>
+        </ul>
+      </details>
       <hr />
+
       <ul class="homework-links">
         <li>
-          <a href="./src/avatars/avatars.html"><strong>아바타</strong></a>
+          <a href="./src/login/login.html"><strong>로그인</strong></a>
         </li>
         <li>
-          <a href="./src/avatars/avatars.md"><strong>3주차 회고</strong></a>
+          <a href="./src/login/styles/login.css"><strong>4주차 회고</strong></a>
         </li>
       </ul>
     </div>

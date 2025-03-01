@@ -9,5 +9,10 @@
 
 ## 3주차\: 아바타
 
-- [아바타 페이지](.src/avatars/avatars.html)
+- [아바타 페이지](./src/avatars/avatars.html)
 - [회고](./src/avatars/avatars.md)
+
+## 4주차\: 로그인
+
+- [로그인 페이지](./src/login/login.html)
+- [회고](./src/login/login.md)
