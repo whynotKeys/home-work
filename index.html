@@ -70,6 +70,24 @@
         color: #000000;
         font-weight: 700;
         transition: color 0.3s ease;
+        padding-block-end: 0.5rem;
+      }
+
+      .previous-hw {
+        background: #e6e6e6;
+        padding-block: 0.5rem;
+      }
+
+      .text-collapse {
+        display: none;
+      }
+
+      details[open] .text-expand {
+        display: none;
+      }
+
+      details[open] .text-collapse {
+        display: inline;
       }
     </style>
     <link
@@ -92,8 +110,12 @@
       <p class="bio">
         멋쟁이 사자처럼 프론트엔드 부트캠프 13기 <br />임지윤 과제 페이지입니다.
       </p>
-      <details>
-        <summary class="summary">지난 과제 모음</summary>
+      <details class="previous-hw">
+        <summary class="summary">
+          지난 과제
+          <span class="text-expand">펼치기</span>
+          <span class="text-collapse">접기</span>
+        </summary>
         <ul class="homework-links">
           <li>
             <a href="./src/md/markdown.md"><strong>마크다운 문법</strong></a>
