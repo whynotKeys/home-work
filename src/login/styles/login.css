@@ -5,16 +5,15 @@
 :root {
   --font-size-base: 16px;
   --color-text-base: #121212;
+  --color-main-theme: #03cf5d;
+  --color-white: #fff;
 }
 
 body {
   font-family: "SpoqaHanSansNeo-Regular";
-  justify-items: center;
   display: flex;
   flex-flow: row nowrap;
-
-  /* inline-size: 100vw;
-  block-size: 100vh; */
+  justify-content: center;
   font-size: var(--font-size-base);
   color: var(--color-text-base);
 
@@ -44,8 +43,8 @@ body {
     .logo {
       display: block;
       inline-size: 14.375rem;
-
       margin-block-start: 4.375rem;
+      margin-block-end: 2.5rem;
     }
   }
 
@@ -60,10 +59,10 @@ body {
     padding-inline: 1rem;
 
     border: 0.0625rem solid #dadada;
-    background: #fff;
+    background: var(--color-white);
 
     &:focus {
-      border: 0.0625rem solid #03cf5d;
+      border: 0.0625rem solid var(--color-main-theme);
       background: #e9f0fd;
     }
   }
@@ -72,49 +71,113 @@ body {
     max-inline-size: 31.25rem;
     margin-inline: 1.25rem;
   }
-}
 
-/* 로그인 버튼 컴포넌트 */
-.login-button {
-  font-size: 1rem;
-  block-size: 2.8125rem;
-  color: #fff;
-  background: #03cf5d;
-  margin-block-start: 1.25rem;
-  border: none;
-}
-
-.login-options {
-  margin-block-start: 0.625rem;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: end;
-  /* justify-content: space-between; */
-
-  /* 체크박스 컴포넌트 */
-  .remember-me {
-    .check-box {
-      appearance: none; /* 기본 체크박스 스타일 제거 */
-      width: 24px;
-      height: 24px;
-      background: url("../images/unchecked.svg") no-repeat center / contain;
-      cursor: pointer;
-      vertical-align: middle;
-      margin-inline-end: 0.3125rem;
-    }
-
-    /* 체크됐을 때 이미지 변경 */
-    .check-box:checked {
-      background-image: url("../images/checked.svg");
-    }
-
-    label[for="rememberMe"] {
-      /* 박스와 높이 안 맞아서 보정 */
-      display: inline-flex;
-      vertical-align: middle;
-    }
-  }
-  .security-onoff {
+  /* 에러메세지 표시 */
+  .error-message {
+    font-size: 0.75rem;
+    color: red;
+    font-weight: 500;
+    margin-block-start: 0.25rem;
     display: none;
+  }
+
+  input:placeholder-shown + .error-message {
+    display: none;
+  }
+  input:invalid:not(:placeholder-shown) + .error-message {
+    display: block;
+  }
+
+  /* 로그인 버튼 컴포넌트 */
+  .login-button {
+    font-size: var(--font-size-base);
+    block-size: 2.8125rem;
+    color: var(--color-white);
+    background: var(--color-main-theme);
+    margin-block-start: 1.25rem;
+    border: none;
+  }
+
+  .login-options {
+    margin-block-start: 0.625rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: end;
+
+    @media (min-width: 48rem) {
+      justify-content: space-between;
+    }
+
+    /* 체크박스 컴포넌트 */
+    .remember-me {
+      .check-box {
+        appearance: none; /* 기본 체크박스 스타일 제거 */
+        width: 1.5rem;
+        height: 1.5rem;
+        background: url("../images/unchecked.svg") no-repeat center / contain;
+        cursor: pointer;
+        vertical-align: middle;
+        margin-inline-end: 0.3125rem;
+      }
+
+      /* 체크됐을 때 이미지 변경 */
+      .check-box:checked {
+        background-image: url("../images/checked.svg");
+      }
+
+      label[for="rememberMe"] {
+        /* 박스와 높이 안 맞아서 보정 */
+        display: inline-flex;
+        vertical-align: middle;
+      }
+    }
+    .security-onoff {
+      /* 모바일 버전에서는 안 보이게 설정 */
+      display: none;
+
+      a {
+        font-size: var(--font-size-base);
+        text-decoration: none;
+        color: var(--color-text-base);
+      }
+
+      .hidden-checkbox {
+        position: absolute;
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      .ip-security-toggle {
+        display: inline-flex;
+        font-size: var(--font-size-base);
+        cursor: pointer;
+        user-select: none;
+        outline: none;
+        margin-inline-start: 0.2rem;
+
+        &::after {
+          content: "OFF";
+          color: gray;
+          font-weight: 600;
+        }
+        /* 체크됐을 때 ON 표시 */
+        .hidden-checkbox:checked + &::after {
+          content: "ON";
+          color: var(--color-main-theme);
+          font-weight: 600;
+        }
+
+        /* 키보드 포커스 시 외곽선 */
+        .hidden-checkbox:focus + & {
+          outline: 0.125rem solid #24388d;
+          outline-offset: 0.0625rem;
+        }
+      }
+
+      @media (min-width: 48rem) {
+        display: flex;
+      }
+    }
   }
 }

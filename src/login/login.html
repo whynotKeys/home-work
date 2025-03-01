@@ -58,22 +58,25 @@
       <div class="input">
         <label for="user-id" class="sr-only">아이디를 입력하세요.</label>
         <input
-          type="text"
+          type="email"
           id="user-id"
           name="user-id"
-          required
           placeholder="아이디(이메일)"
           class="login-input"
+          required
         />
+        <p class="error-message">아이디는 이메일 형식으로 입력해주세요.</p>
         <label for="user-pwd" class="sr-only">비밀번호를 입력하세요.</label>
         <input
           type="password"
           id="user-pwd"
           name="user-pwd"
-          required
           placeholder="비밀번호"
           class="login-input"
+          minlength="10"
+          required
         />
+        <p class="error-message">비밀번호는 10자리 이상 입력해주세요.</p>
       </div>
 
       <!-- 로그인 버튼 컴포넌트 -->
@@ -87,15 +90,24 @@
             name="rememberMe"
             id="rememberMe"
             class="check-box"
-            checked
           />
           <label for="rememberMe"> 로그인 상태유지</label>
         </section>
 
         <!-- IP보안 토글 컴포넌트 -->
         <section class="security-onoff">
-          <label for="ip-security"><a href="" class="ip-link">IP보안</a></label>
-          <input type="checkbox" name="ip-security" id="ip-security" />
+          <a
+            href="./pages/ip_security.html"
+            title="네이버 IP보안 안내(새창)"
+            class="ip-link"
+            target="_blank"
+            >IP보안</a
+          ><input
+            type="checkbox"
+            name="ip-security"
+            id="ip-security"
+            class="hidden-checkbox"
+          /><label for="ip-security" class="ip-security-toggle"></label>
         </section>
       </div>
     </form>
