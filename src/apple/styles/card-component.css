@@ -1,3 +1,158 @@
 @import "./reset.css";
 @import "./theme.css";
 @import "./base.css";
+
+body {
+  /* 귀여워서 받았는데 가독성 떨어져서 기각 */
+  /* font-family: "An Apple","SanFrancisco", sans-serif; */
+  font-family: "Pretendard";
+}
+
+/* 이미지 섹션 */
+.ipad-pro {
+  background: image-set(
+    url("../products/webps/ipad_pro.webp") 1x,
+    url("../products/webps/ipad_pro_2x.webp") 2x
+  );
+}
+
+.ipad-air {
+  background: image-set(
+    url("../products/webps/ipad_air.webp") 1x,
+    url("../products/webps/ipad_air_2x.webp") 2x
+  );
+}
+
+.iphone15-pro {
+  background: image-set(
+    url("../products/webps/iphone15_pro.webp") 1x,
+    url("../products/webps/iphone15_pro_2x.webp") 2x
+  );
+}
+
+.iphone15 {
+  background: image-set(
+    url("../products/webps/iphone15.webp") 1x,
+    url("../products/webps/iphone15_2x.webp") 2x
+  );
+}
+
+.apple-watch {
+  background: image-set(
+    url("../products/webps/apple_watch.webp") 1x,
+    url("../products/webps/apple_watch_2x.webp") 2x
+  );
+}
+
+.macbook-air {
+  background: image-set(
+    url("../products/webps/macbook_air.webp") 1x,
+    url("../products/webps/macbook_air_2x.webp") 2x
+  );
+}
+
+.airpods {
+  background: image-set(
+    url("../products/webps/airpods_pro.webp") 1x,
+    url("../products/webps/airpods_pro_2x.webp") 2x
+  );
+}
+
+/* 구형 브라우저를 위한 @media 대체 */
+@media (-webkit-min-device-pixel-ratio: 2) {
+  .ipad-pro {
+    background: url("../products/webps/ipad_pro_2x.webp");
+  }
+  .ipad-air {
+    background-image: url("../products/webps/ipad_air_2x.webp");
+  }
+  .iphone15-pro {
+    background-image: url("../products/webps/iphone15_pro_2x.webp");
+  }
+  .iphone15 {
+    background-image: url("../products/webps/iphone15_2x.webp");
+  }
+  .apple-watch {
+    background-image: url("../products/webps/apple_watch_2x.webp");
+  }
+  .macbook-air {
+    background-image: url("../products/webps/macbook_air_2x.webp");
+  }
+  .airpods {
+    background-image: url("../products/webps/airpods_pro_2x.webp");
+  }
+}
+
+.product-card {
+  /* 일단 너비높이 줬는데 바뀔지도? */
+  width: 100%;
+  min-height: var(--size);
+  display: grid;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+/* 텍스트 파트 */
+.dark-bg {
+  /* 임시 */
+  background-color: black;
+
+  color: var(--white);
+
+  .more-button {
+    background-color: var(--blue-300);
+  }
+  .price-button {
+    background-color: none;
+    color: var(--blue-300);
+    border: 1px solid currentColor;
+  }
+}
+
+.light-bg {
+  /* 임시 */
+  background-color: lightblue;
+
+  color: var(--black);
+
+  .more-button {
+    color: var(--white);
+    background-color: var(--black);
+  }
+  .price-button {
+    background-color: none;
+    border: 1px solid currentColor;
+  }
+}
+
+/* 제품명 */
+.product-name {
+  font-size: var(--large-text);
+}
+
+/* 제품 설명 */
+.product-description {
+  font-size: var(--base-text);
+}
+
+/* 출시일 */
+.release-date {
+  font-style: var(--small-text);
+  color: var(--gray);
+}
+
+/* 버튼 */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  block-size: 2.75em;
+
+  padding-inline: var(--small-spacing);
+  padding-block: var(--x-small-spacing);
+  font-size: var(--xx-small-text);
+
+  border-radius: 50em;
+}
