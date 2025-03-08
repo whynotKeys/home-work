@@ -145,6 +145,7 @@ body {
 /* 제품명(제목) */
 .product-name {
   font-size: var(--large-text);
+  white-space: nowrap;
 
   @media (min-width: 64rem) {
     font-size: var(--extra-large-text);
