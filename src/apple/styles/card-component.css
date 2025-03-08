@@ -14,6 +14,13 @@ body {
     url("../products/webps/ipad_pro.webp") 1x,
     url("../products/webps/ipad_pro_2x.webp") 2x
   );
+
+  @media (min-width: 64rem) {
+    background: image-set(
+      url("../products/webps/ipad_pro_wide.webp") 1x,
+      url("../products/webps/ipad_pro_wide_2x.webp") 2x
+    );
+  }
 }
 
 .ipad-air {
@@ -21,6 +28,13 @@ body {
     url("../products/webps/ipad_air.webp") 1x,
     url("../products/webps/ipad_air_2x.webp") 2x
   );
+
+  @media (min-width: 64rem) {
+    background: image-set(
+      url("../products/webps/ipad_air_wide.webp") 1x,
+      url("../products/webps/ipad_air_wide_2x.webp") 2x
+    );
+  }
 }
 
 .iphone15-pro {
@@ -28,6 +42,13 @@ body {
     url("../products/webps/iphone15_pro.webp") 1x,
     url("../products/webps/iphone15_pro_2x.webp") 2x
   );
+
+  @media (min-width: 64rem) {
+    background: image-set(
+      url("../products/webps/iphone15_pro_wide.webp") 1x,
+      url("../products/webps/iphone15_pro_wide_2x.webp") 2x
+    );
+  }
 }
 
 .iphone15 {
@@ -84,21 +105,17 @@ body {
 }
 
 .product-card {
-  /* 일단 너비높이 줬는데 바뀔지도? */
   width: 100%;
   min-height: var(--size);
   display: grid;
 
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
+  background-size: cover;
 }
 
-/* 텍스트 파트 */
+/* 어두운 배경 이미지 글씨색/버튼디자인 */
 .dark-bg {
-  /* 임시 */
-  background-color: black;
-
   color: var(--white);
 
   .more-button {
@@ -111,10 +128,8 @@ body {
   }
 }
 
+/* 밝은 배경 이미지 글씨색/버튼디자인 */
 .light-bg {
-  /* 임시 */
-  background-color: lightblue;
-
   color: var(--black);
 
   .more-button {
@@ -127,32 +142,50 @@ body {
   }
 }
 
-/* 제품명 */
+/* 제품명(제목) */
 .product-name {
   font-size: var(--large-text);
+
+  @media (min-width: 64rem) {
+    font-size: var(--extra-large-text);
+  }
 }
 
-/* 제품 설명 */
+/* 제품 설명(부제목) */
 .product-description {
   font-size: var(--base-text);
+  line-height: var(--line-normal);
+  text-align: center;
+  margin-block-end: var(--x-small-spacing);
+  white-space: nowrap;
+
+  @media (min-width: 64rem) {
+    font-size: var(--medium-text);
+  }
 }
 
 /* 출시일 */
 .release-date {
+  display: block;
   font-style: var(--small-text);
   color: var(--gray);
+  margin-block-end: var(--small-spacing);
 }
 
-/* 버튼 */
+/* 버튼 베이스*/
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  block-size: 2.75em;
 
+  font-size: var(--xx-small-text);
   padding-inline: var(--small-spacing);
   padding-block: var(--x-small-spacing);
-  font-size: var(--xx-small-text);
 
+  block-size: 2.75em;
   border-radius: 50em;
+
+  @media (min-width: 64rem) {
+    font-size: var(--x-small-text);
+  }
 }

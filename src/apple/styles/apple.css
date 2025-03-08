@@ -1,5 +1,35 @@
 @import "./card-component.css";
 
 /* 카드 레이아웃 */
+/* 컨테이너 내의 요소 배치 */
+.apple-container {
+}
+
+/* 카드 내 배치*/
 .product-card {
+  /* background: #000; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 50%;
+
+  margin-block-end: var(--large-spacing);
+
+  /* 카드 내의 요소들 */
+  .content {
+    grid-column: 2 / 3;
+    justify-items: center;
+
+    .product-name {
+      margin-block-start: var(--large-spacing);
+    }
+
+    .links {
+      display: block;
+      white-space: nowrap;
+
+      .price-button {
+        margin-inline-start: var(--base-spacing);
+      }
+    }
+  }
 }
