@@ -16,3 +16,8 @@
 
 - [로그인 페이지](./src/login/login.html)
 - [회고](./src/login/login.md)
+
+## 5주차\: 애플
+
+- [애플 페이지](./src/apple/apple.html)
+- [회고](./src/apple/apple.md)
